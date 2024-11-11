@@ -1,0 +1,269 @@
+    * {
+        box-sizing: border-box;
+    }
+
+    :root {
+        --color1: #D89584;
+        --color2: #F4F4F4;
+        --color3: #34bcd4;
+    }
+
+    body {
+        background-color: white;
+        font-family: Arial;
+        margin-bottom: 0px;    
+    }
+
+ /* contact */   
+
+
+iframe {
+    width: 100%;
+    border: none;
+    height: 350px;
+    background-color: grey;
+}
+div.frame {
+    margin: 30px 50px;
+    border: 2px solid var(--color3);
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    background-color: white;
+}
+div.frame img{
+    width: 130px;
+}
+
+/* sommaire */  
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0px 0px;
+    position: relative;
+    
+}
+
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px; 
+    border: 1px solid red; 
+    width: 50px;
+    position: relative; /* Pour positionner le cadre blanc par rapport au menu-icon */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(244, 248, 245);
+    transition: 0.3s;  
+}
+
+/* Cadre blanc caché par défaut */
+.hover-box {
+    position: absolute;
+    top: 0;
+    left: 60px; /* Ajuste la position du cadre blanc par rapport au menu-icon */
+    width: 150px;
+    height: 300px;
+    background-color: white;
+    display: none; /* Masque le cadre par défaut */
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Afficher le cadre blanc lors du survol de .menu-icon */
+.menu-icon:hover .hover-box {
+    display: block;
+}
+
+/* fin sommaire */  
+
+
+
+
+
+
+div.titre { 
+    text-align: center;
+    color: aliceblue;
+    background-color: rgb(1, 10, 17);
+    background-position: center;
+    padding: 0px 0px;
+    height: 200px;
+
+}
+
+img.info {
+    display: block;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+    width: 90%;
+}
+
+div.info {
+    text-align: center;
+    margin-block-end: 20px;
+}
+
+h1 {
+    margin-top: 40px;
+}
+h2  {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 30px;
+
+}
+
+.sous_titre {
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+.retour{
+    display: inline-block; /* Permet au padding et au border-radius de bien s'appliquer */
+    background-color: black; /* Couleur bleue pour le bouton */ 
+    color: white;
+    text-decoration: none;
+    transition: background-color 3s;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.retour-container{
+    justify-content: center;      /* Centre le texte à l'intérieur */   
+    position: relative; /* Permet de positionner le tooltip par rapport au bouton */
+    display: inline-block;
+}
+
+
+
+.retour:hover {
+    background-color: #aeaba5; /* Changement de couleur au survol */
+    
+}
+
+
+.button-container{
+    display: flex;         /* Ajuste la largeur du bouton au contenu */
+    justify-content: center;      /* Centre le texte à l'intérieur */   
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;   
+    padding: 10px 10px;
+    background-color: black; /* Couleur bleue pour le bouton */ 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+
+}
+.button:hover {
+    background-color: #0056b3; /* Changement de couleur au survol */
+    
+}
+
+div.photos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.image-container {
+    max-width: 100%; /* Occupe 100% de la largeur disponible */
+    text-align: center; /* Centre les images à l'intérieur du conteneur */
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.image-container img {
+    
+    height: auto; /* La hauteur s'ajuste automatiquement pour conserver les proportions originales de l'image */
+    margin: 10px; /* Marge entre les images */
+    box-sizing: border-box; /* Inclure les marges dans la largeur totale de l'image */
+    }
+
+
+
+
+p {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: lightgrey;
+    padding: 30px 30px 30px 30px;
+}
+
+div.separateur {
+    background-color: red ;
+    height: 3px;
+    width: 300px;
+    left: 50%;
+    position: relative;
+    margin-left: -150px;
+    margin-top: 50px;
+}
+
+.contact:hover{
+    color: white;
+}
+
+* {
+    overflow: auto;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+.image-responsive {
+    max-width: 100%;
+    height: auto;
+}
+p {
+    margin-left: auto;
+    margin-right: auto;
+}
+iframe {
+    border: none;
+    height: 250px;
+    
+}
+div.frame {
+    margin: 20px 0px;
+    box-shadow: none;
+    border: none;
+    
+}
+div.frame img{
+    width: 70px;
+}
+}
