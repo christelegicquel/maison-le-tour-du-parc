@@ -1,20 +1,20 @@
-    * {
-        box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    :root {
-        --color1: #D89584;
-        --color2: #F4F4F4;
-        --color3: #34bcd4;
-    }
+:root {
+    --color1: #D89584;
+    --color2: #F4F4F4;
+    --color3: #34bcd4;
+}
 
-    body {
-        background-color: white;
-        font-family: Arial;
-        margin-bottom: 0px;    
-    }
+body {
+    background-color: white;
+    font-family: Arial;
+    margin-bottom: 0px;    
+}
 
- /* contact */   
+/* contact */   
 
 
 iframe {
@@ -36,52 +36,94 @@ div.frame img{
 
 /* sommaire */  
 
-header {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0px 0px;
-    position: relative;
+.header {
+    display: flex; /* Affiche les éléments en ligne par défaut */
+    padding: 20px; /* Un peu de padding autour */
+    justify-content: center; /* Aligner les éléments à gauche */
+    align-items: center; /* Aligner les éléments au début de l'axe vertical */
+    position: relative; /* Nécessaire pour permettre à l'élément .carre de se positionner absolument */
+}
+
+
+/* Conteneur du texte pour empiler les phrases verticalement */
+.text-container {
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Empiler les éléments verticalement */
+    justify-content: center; /* Aligner les éléments au centre sur l'axe vertical */
     
 }
 
-
-.menu-icon {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 10px; 
-    border: 1px solid red; 
-    width: 50px;
-    position: relative; /* Pour positionner le cadre blanc par rapport au menu-icon */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.menu-icon span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: rgb(244, 248, 245);
-    transition: 0.3s;  
-}
-
-/* Cadre blanc caché par défaut */
-.hover-box {
+/* Style du carré en haut à gauche */
+.carre {
     position: absolute;
     top: 0;
-    left: 60px; /* Ajuste la position du cadre blanc par rapport au menu-icon */
-    width: 150px;
-    height: 300px;
-    background-color: white;
-    display: none; /* Masque le cadre par défaut */
-    border: 1px solid black;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    left: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around; /* Espace entre les bandes */
+    padding: 5px; /* Espace intérieur pour les bandes */
+    background-color:rgb(8, 0, 0);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+/* Style des bandes blanches */
+.carre .ligne {
+    width: 100%; /* Prend toute la largeur du carré */
+    height: 3px; /* Hauteur de chaque bande */
+    background-color: white; /* Fond blanc */
+    transition: transform 0.3s ease; /* Transition pour l'animation */
+}
+
+.phrase-container2 {
+    
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+
+    visibility: hidden; /* Caché par défaut, ne prend pas de place dans le flux de la mise en page */
+    position: absolute; /* Gardé en position absolue pour éviter de modifier la mise en page */
+    top: 45px; /* Positionné juste en dessous du carré */
+    left: 5px; /* Aligner à gauche sous le carré */
+    background-color: rgb(218, 223, 221);
+    box-sizing: border-box; /* Inclure le padding dans la largeur et hauteur */
+    opacity: 0; /* Transparence au départ */
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Transition douce pour la visibilité et l'opacité */
+}
+
+/* Lorsque la phrase devient visible */
+.phrase-container2.visible {
+    visibility: visible; /* Le rendre visible */
+    opacity: 1; /* Rendre visible avec une opacité de 1 */    
+}
+
+/* Style pour le titre dans l'encadré noir */
+.titre {
+    text-align: left;
+    color: aliceblue;
+    background-color: rgb(1, 10, 17);
+    padding: 10px;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
 }
 
 
-/* Afficher le cadre blanc lors du survol de .menu-icon */
-.menu-icon:hover .hover-box {
-    display: block;
+
+
+/* Style de la phrase */
+.phrase {
+    font-size: 13px; /* Taille de la phrase */
+    color: rgb(5, 0, 0);
+    text-decoration: none; /* Enlève le soulignement par défaut des liens */
+    text-align: left;
 }
+.phrase:hover {
+    color: rgb(30, 206, 106); /* Change la couleur en rouge lorsqu'on survole le lien */
+}
+
 
 /* fin sommaire */  
 
@@ -114,7 +156,8 @@ div.info {
 }
 
 h1 {
-    margin-top: 40px;
+    margin-top: 30px;
+    color: white; /* Texte blanc pour être lisible sur fond noir */
 }
 h2  {
     text-align: center;
